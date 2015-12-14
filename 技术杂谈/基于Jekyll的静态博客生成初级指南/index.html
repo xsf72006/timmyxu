@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>基于Jekyll的静态博客生成指南</title>
+  <meta name="description" content="前言">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://timmyxu.me/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E5%9F%BA%E4%BA%8EJekyll%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%88%9D%E7%BA%A7%E6%8C%87%E5%8D%97/">
+  <link rel="alternate" type="application/rss+xml" title="菩提树下有只蝉" href="https://timmyxu.me/feed.xml" />
+</head>
+
+
+  <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-31169879-1', 'auto');
+      ga('send', 'pageview');
+
+  </script>
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">菩提树下有只蝉</a>
+    <p class="site-subtitle">不鸣则已，一鸣惊人</p>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <!-- 
+          
+          <a class="page-link" href="/about/">关于</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/hjp/">Application Homepage of Mr. Hou, Junpeng</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/hjp/ps/">PS of Mr. Hou, Junpeng</a>
+          
+        
+          
+          <a class="page-link" href="/reading-list/">阅读清单</a>
+          
+        
+          
+          <a class="page-link" href="/hjp/resume/">CV of Mr. Hou, Junpeng</a>
+          
+        
+          
+          <a class="page-link" href="/tags/jekyll/">标签：jekyll</a>
+          
+        
+          
+          <a class="page-link" href="/tags/english/">标签：English</a>
+          
+        
+          
+          <a class="page-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/">归档：技术杂谈</a>
+          
+        
+          
+          <a class="page-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/">归档：生活随想</a>
+          
+         -->
+        <a class="page-link" href="/reading-list/">阅读清单</a>
+        <a class="page-link" href="/about/">关于</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="page-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">基于Jekyll的静态博客生成指南</h1>
+    <p class="post-meta">
+    2015年04月15日
+    -
+    标签：
+    
+    <a href="/tags/jekyll/ " class="tag-item">jekyll</a>
+    
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="section">前言</h2>
+
+<p>本文主要介绍著名的静态博客生成器 Jekyll 的基本使用方法。不同于 <a href="http://cn.wordpress.org">WordPress</a> 等博客系统，Jekyll 生成的站点无需依赖数据库，所有页面都由 Jekyll 静态生成，用户只需使用 Markdown 等标记语言撰写文章并重新生成即可。本站即基于 Jekyll 搭建。</p>
+
+<p>首先简单介绍一下 Jekyll。</p>
+
+<h2 id="section-1">简介</h2>
+
+<blockquote>
+  <p>Jekyll 是一个简单的博客形态的静态站点生成器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown（或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。		——<a href="http://jekyllcn.com">Jekyll中文官方网站</a></p>
+</blockquote>
+
+<h3 id="section-2">特性</h3>
+
+<p>如上文所说，Jekyll 具有三大特性：简单，静态，博客形态。具体解释如下：</p>
+
+<ul>
+  <li>简单：无需数据库，没有评论功能，没有频繁的版本更新——仅仅关注你的内容。</li>
+  <li>静态：利用 Markdown（或 Textile）等标记语言，Liquid 模板语言，和 HTML &amp; CSS 构建可发布的静态网站。</li>
+  <li>博客形态：支持 URL 自定义，支持文章分类，支持单页面，可以自定义博客布局。</li>
+</ul>
+
+<h3 id="section-3">目录结构</h3>
+
+<p>Jekyll 的核心其实是一个文本转换引擎。它的概念其实就是：你用你最喜欢的标记语言来写文章，可以是 Markdown，也可以是 Textile，或者就是简单的 HTML，然后 Jekyll 就会帮你套入一个或一系列的布局中。在整个过程中你可以设置 URL 路径，你的文本在布局中的显示样式等等。这些都可以通过纯文本编辑来实现，最终生成的静态页面就是你的成品了。</p>
+
+<p>一个基本的 Jekyll 网站的目录结构一般是像这样的：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.
+├── _config.yml
+├── _drafts
+|	├──begin-with-the-crazy-ideas.textile
+|	└──on-simplicity-in-technology.markdown
+├──_includes
+|	├── footer.html
+|	└── header.html
+├── _layouts
+|	├── default.html
+|	└── post.html
+├── _posts
+|	├── 2007-10-29-why-every-programmer-should-play-nethack.markdown
+|	└── 2009-04-26-barcamp-boston-4-roundup.markdown
+├── _site
+└── index.html
+</code></pre>
+</div>
+
+<ol>
+  <li>_config.yml: 配置文件，例如站点 title，permalink 的格式等在这个文件中配置，在布局文件中可以用liquid语言进行调用。</li>
+  <li>_drafts: 存放草稿的文件夹。</li>
+  <li>_includes: 你可以加载这些包含部分到你的布局或者文章中以方便重用。可以用这个标签  <code class="highlighter-rouge"><span class="p">{</span><span class="err">\%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">header.html</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code> （去掉转义符号\，下同）来把文件 _includes/header.html 包含进来。</li>
+  <li>_layouts: 是包裹在文章外部的模板。布局可以在 <strong>YAML</strong> 头信息中根据不同文章进行选择。 下一章中将对此进行介绍。标签 <code class="highlighter-rouge"><span class="p">{</span><span class="err">\{</span><span class="w"> </span><span class="err">content</span><span class="w"> </span><span class="p">}</span><span class="err">\}</span></code> 可以将 content 插入页面中。</li>
+  <li>_posts: 这里存放的是你的文章。文件格式很重要，必须要符合: YEAR-MONTH-DAY-title.MARKUP。permalinks 可以在文章中通过 YAML 自己定制，但是数据和标记语言都是根据文件名来确定的。</li>
+  <li>_site:  Jekyll 生成后的静态网站就存在这个文件夹中。将此文件夹中的内容上传至你的服务器，即可访问。</li>
+  <li>index.html 等其他文件: 如果这些文件含有 YAML 头信息，那么Jekyll会将其转化成静态页面。以 <code class="highlighter-rouge">.html</code>，<code class="highlighter-rouge">.markdown</code>，<code class="highlighter-rouge">.md</code> 或者 <code class="highlighter-rouge">.textile</code> 结尾的也会被转换。</li>
+</ol>
+
+<p>本章对 Jekyll 进行了一些简单的介绍，若想详细了解其他方面，请访问 Jekyll 官方网站（<a href="http://jekyllcn.com">中文</a>，<a href="http://jekyllrb.com">英文</a>）。</p>
+
+<h2 id="section-4">使用指南</h2>
+
+<p>本指南是博主搭建本站时的步骤总结，供初次使用 Jekyll 的同学提供一点思路。主要从安装、配置和部署三个方面来介绍。</p>
+
+<h3 id="section-5">安装</h3>
+
+<p>由于最终只需将 _site 文件夹内的内容部署至服务器，所以我们在本地安装 Jekyll 并配置生成博客，然后部署即可。</p>
+
+<p>这里博主使用的环境是<strong>Mac OS X 10.10</strong>，Linux 下操作类似，官方不推荐使用 Windows 运行 Jekyll。</p>
+
+<p>安装使用 RubyGems，操作过程很简单，打开命令行，输入以下命令：</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">~ <span class="nv">$ </span>gem install jekyll
+~ <span class="nv">$ </span>jekyll new my-awesome-site
+~ <span class="nv">$ </span><span class="nb">cd </span>my-awesome-site
+~/my-awesome-site <span class="nv">$ </span>jekyll serve
+<span class="c"># =&gt; Now browse to http://localhost:4000</span></code></pre></figure>
+
+<p>打开你的浏览器，在地址栏中输入 http://localhost:4000 即可访问由 Jekyll 生成的静态站点！</p>
+
+<h3 id="section-6">配置说明</h3>
+
+<p>好了，第一步成功后，我们可以访问由 Jekyll 生成的一个默认的站点，为了让站点更加符合自己的个性与审美，下面我们对站点进行一些配置。</p>
+
+<h4 id="section-7">站点设置</h4>
+
+<h5 id="configyml"><strong>_config.yml</strong></h5>
+
+<p><code class="highlighter-rouge">_config.yml</code>文件是站点全局配置文件。在此文件中我们可以修改自己的站点 title，description，permalink 格式等全局变量，以及标记语言解释器和一些其他的设置。Jekyll 默认的配置见<a href="http://jekyllrb.com/docs/configuration/#default-configuration]">此处</a>。</p>
+
+<p>在样式模板中可以调用此文件中的变量，使用方法是用 liquid 语言进行调用，如 <code class="highlighter-rouge"><span class="p">{</span><span class="err">\{</span><span class="w"> </span><span class="err">site.title</span><span class="w"> </span><span class="p">}</span><span class="err">\}</span></code>，父属性是 <strong>site</strong>。</p>
+
+<h5 id="yaml"><strong>YAML</strong></h5>
+
+<p>正是 YAML 头信息开始让 Jekyll 变的很酷。任何只要包含 YAML 头信息的文件在 Jekyll 中都能被当做一个特殊的文件来处理。头信息必须在文件的开始部分，并且需要按照 YAML 的格式写在两行三虚线之间。下面是一个基本的例子：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>---
+layout: post
+title: Blogging Like a Hacker
+---
+</code></pre>
+</div>
+
+<p>在 YAML 头信息中，你可以使用已经定义好的全局变量，如 <code class="highlighter-rouge">layout</code>，<code class="highlighter-rouge">permalink</code> 等，也可以自定义变量，如 <code class="highlighter-rouge">title</code>，使其可以在样式模板中使用这个变量。调用自定义变量方法是 <code class="highlighter-rouge"><span class="p">{</span><span class="err">\{page.title</span><span class="p">}</span><span class="err">\}</span></code>，父属性是 <strong>page</strong>。</p>
+
+<h4 id="section-8">自定义样式</h4>
+
+<p>Jekyll 默认的模板很简洁，也很漂亮。本站基于默认模板样式作出了一点改动，例如超链接样式，header 配色，边栏布局等。</p>
+
+<p>Jekyll默认模板中样式文件主要是 css 文件夹中的 main.scss，_sass 文件夹中的 base.scss 和 layout.scss。</p>
+
+<p>main.scss 文件主要设定了如 width，margin 等基本值，base.scss 文件对 HTML 基本元素进行了 reset，layout.scss 文件是对自定义 class，id 等进行样式设置。博主主要修改的就是 layout.scss 文件。有关 CSS 样式，以及动态样式语言 SCSS 的相关知识，可自行 Google 学习。</p>
+
+<h4 id="section-9">评论功能</h4>
+
+<p>作为不依赖数据库的静态博客系统，Jekyll 自然是没有文章评论功能，如果想在自己的博文中引入评论功能，可以引入公共的评论平台。目前常用的有 Disqus 和多说。本站用的是 Disqus。</p>
+
+<p>具体设置方法很简单：</p>
+
+<ol>
+  <li>在 <a href="http://disqus.com">Disqus 官网</a> 注册账号并登陆，点击右上角<code class="highlighter-rouge">Settings - Add Disqus To Site</code>按钮；</li>
+  <li>填写你站点的相关信息，完成创建；</li>
+  <li>设置你的评论框，包括登陆限制，语言等，保存设置；</li>
+  <li>点击 <code class="highlighter-rouge">install</code>，生成一段js代码，复制并粘贴到 Jekyll 中你想让评论出现的地方即可（本站为 <code class="highlighter-rouge">_layout/post.html</code> 文件中末端）；</li>
+  <li>在文章的 YAML 信息中添加 <code class="highlighter-rouge">comments: true</code>。</li>
+</ol>
+
+<blockquote>
+  <p><strong>注意</strong>：Disqus的评论框设置改变后，只对新调用了评论接口的文章有效，对之前的文章无效，即旧文章评论框还是改动前的设置。</p>
+</blockquote>
+
+<h4 id="section-10">分类目录&amp;标签</h4>
+
+<p>Jekyll 提供了分类（category）和标签（tag）的全局变量，我们可以在自己文章的 YAML 头信息里加上相关信息，如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>---
+layout: post
+title:  "基于Jekyll的静态博客生成初级指南"
+categories: 技术杂谈
+tags: jekyll
+---
+</code></pre>
+</div>
+
+<p>如果想在文章正文显示这些分类和标签，那么在文章的模板中（<code class="highlighter-rouge">_layout/post.html</code>）相应位置添加调用即可。</p>
+
+<p>不过我们可能会有这样的需求：<em>需要在单独一个页面显示某个分类或者某个标签下所有的文章</em>。这时，我们引入<strong>插件</strong>功能。</p>
+
+<p>Jekyll 支持插件功能，你可以很容易的加入自己的代码。插件由 <code class="highlighter-rouge">ruby</code> 语言写成。</p>
+
+<p>插件的安装很简单：在博客根下目录建立 _plugins 文件夹，插件放在这里即可。 Jekyll 运行之前，会加载此目录下所有以 *.rb 结尾的文件。</p>
+
+<p>为了满足上面提到的需求，本站使用了 Github 用户 recurser 提供的插件 <a href="https://github.com/recurser/jekyll-plugins">jekyll-plugins</a>。
+该插件提供了生成单个分类页面的功能，使用方法如下：</p>
+
+<ol>
+  <li>下载项目；</li>
+  <li>将 <code class="highlighter-rouge">generate_categories.rb</code> 复制到站点的 <code class="highlighter-rouge">_plugins</code> 文件夹中，将 <code class="highlighter-rouge">_layout</code> 中的 <code class="highlighter-rouge">category_index.html</code> 复制到站点 <code class="highlighter-rouge">_layout</code> 文件夹中，这两个文件分别是插件和样式；</li>
+  <li>在需要显示分类列表的地方添加如下代码</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul&gt;</span>
+	{\% for category in site.categories %}
+	<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/categories/{\{category|first}\}/"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;li&gt;</span>
+			{\{ category|first }\} 
+			|
+			{\{ category|last|size}\}
+		<span class="nt">&lt;/li&gt;</span>
+	<span class="nt">&lt;/a&gt;</span>
+	{\% endfor %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p>其中，<code class="highlighter-rouge">site.categories</code>存放站点的分类集合，<code class="highlighter-rouge">category|first</code>为分类名，<code class="highlighter-rouge">category|last|size</code>为该分类下文章数目。该分类所有文章列表的页面 URL 为 <code class="highlighter-rouge">/categories/{\{category|first}\}/</code>。</p>
+
+<p>对于标签，只需将插件中的 category 关键字替换为 tag 即可。</p>
+
+<p>更多插件，请查看<a href="http://jekyllrb.com/docs/plugins/#available-plugins">官方文档</a>。</p>
+
+<h3 id="section-11">部署方法</h3>
+
+<p>常用的有两种部署方法。</p>
+
+<ul>
+  <li>Github Pages 提供免费托管服务，参考<a href="http://jekyllcn.com/docs/github-pages/">这里</a>的指南。</li>
+  <li>可以部署到自己的 VPS 上，利用 rsync 命令将本地生成后的  _site 文件夹内容上传至网站根目录即可。示例：<code class="highlighter-rouge">rsync -avz _site/. &lt;name&gt;@&lt;IP&gt;:/var/www/html/</code>。</li>
+</ul>
+
+<h2 id="section-12">结语</h2>
+
+<p>Jekyll 还有很多功能诸如分页、数学公式的支持等，会在将来本站更新到这些功能时，另开一篇文章说明。</p>
+
+<p>当然，还有很多其他非常优秀的静态网站生成器，<a href="https://www.staticgen.com">这里</a>列出了其中一部分。<a href="http://szm.me">宋子明</a>的<a href="http://szm.me/build-a-static-blog-using-nanoc/">这篇博文</a>介绍了Nanoc使用方法，大家可以参考。</p>
+
+
+  </article>
+  <div>
+    <p class="post-meta">
+    本文分类：<a href="/categories/技术杂谈/ ">技术杂谈</a>
+    <p>
+  </div>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'xsf72006';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  
+</div>
+
+        </div>
+        <div class="sidebar-category">
+          <aside>
+            <ul class="category-list">
+              
+              <a  class="category-item" href="/categories/技术杂谈/">
+              <li>技术杂谈<span class="category-badge">1</span></li>
+              </a>
+              
+              <a  class="category-item" href="/categories/生活随想/">
+              <li>生活随想<span class="category-badge">2</span></li>
+              </a>
+              
+            </ul>
+          </aside>
+          <aside>            
+            <ul class="category-list">
+              <h3>标签</h3>
+              
+              <a href="/tags/jekyll/ " class="tag-item" title="2篇文章">jekyll</a>
+              
+              <a href="/tags/English/ " class="tag-item" title="1篇文章">English</a>
+              
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">菩提树下有只蝉</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          
+          <a href="/categories/技术杂谈/ ">
+          <li>技术杂谈</li>
+          </a>
+          
+          <a href="/categories/生活随想/ ">
+          <li>生活随想</li>
+          </a>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          <li>
+            <i class="fa fa-rss fa-fw"></i>
+            <a href="/feed.xml">
+              <span class="username">RSS</span>
+            </a>
+          </li>
+          <li>
+            <i class="fa fa-github fa-fw"></i>
+            <a href="https://github.com/xsf72006" target="_blank">
+              <span class="username">Github</span>
+            </a>
+          </li>
+          <li>
+            <i class="fa fa-weibo fa-fw"></i>
+            <a href="http://weibo.com/xsf72006" target="_blank">
+              <span class="username">Weibo</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+      探索：
+      <ul>
+        <li><a href="http://szm.me" target="_blank">宋子明的博客</a></li>
+        <li><a href="http://www.renfei.org" target="_blank">Renfei Song</a></li>
+        <li><a href="http://wanzy.me" target="_blank">万昭祎的个人网站</a></li>
+        <li><a href="http://wcqblog.github.io" target="_blank">WunGCQ的博客</a></li>
+      </ul>
+      </div>
+
+      <div>
+        <p class="copyright">©2015 菩提树下有只蝉</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

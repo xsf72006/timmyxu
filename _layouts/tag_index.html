@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<h3 class="category">{{ page.title }}</h3>
+<ul class="post-list">
+	{% for post in site.tags[page.tag] %}
+	<li>
+    <span class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</span>
+    <h2>
+    	<a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    </li>
+	{% endfor %}
+</ul>

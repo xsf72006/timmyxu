@@ -1,0 +1,57 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          {% for category in site.categories %}
+          <a href="/categories/{{category|first}}/ {{| prepend: site.baseurl}}">
+          <li>{{ category|first }}</li>
+          </a>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          <li>
+            <i class="fa fa-rss fa-fw"></i>
+            <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+              <span class="username">RSS</span>
+            </a>
+          </li>
+          <li>
+            <i class="fa fa-github fa-fw"></i>
+            <a href="https://github.com/xsf72006" target="_blank">
+              <span class="username">Github</span>
+            </a>
+          </li>
+          <li>
+            <i class="fa fa-weibo fa-fw"></i>
+            <a href="http://weibo.com/xsf72006" target="_blank">
+              <span class="username">Weibo</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+      探索：
+      <ul>
+        <li><a href="http://szm.me" target="_blank">宋子明的博客</a></li>
+        <li><a href="http://www.renfei.org" target="_blank">Renfei Song</a></li>
+        <li><a href="http://wanzy.me" target="_blank">万昭祎的个人网站</a></li>
+        <li><a href="http://wcqblog.github.io" target="_blank">WunGCQ的博客</a></li>
+      </ul>
+      </div>
+
+      <div>
+        <p class="copyright">©2015 菩提树下有只蝉</p>
+      </div>
+    </div>
+  </div>
+
+</footer>

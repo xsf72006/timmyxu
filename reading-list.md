@@ -7,6 +7,12 @@ permalink: /reading-list/
 ####2015
 
 <div class="book">
+	<img class="book-img" src="http://img3.douban.com/lpic/s24642953.jpg" width="180">
+	<hr>
+	<a href="http://book.douban.com/subject/10554309/" target="_blank">恶意</a>
+</div>
+
+<div class="book">
 	<img class="book-img" src="http://img3.douban.com/lpic/s4066862.jpg" width="180">
 	<hr>
 	<a href="http://book.douban.com/subject/4074636/" target="_blank">放学后</a>

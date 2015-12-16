@@ -6,9 +6,10 @@
 </description>
     <link>https://timmyxu.me/</link>
     <atom:link href="https://timmyxu.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Dec 2015 16:49:17 +0800</pubDate>
-    <lastBuildDate>Wed, 16 Dec 2015 16:49:17 +0800</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>    
+    <pubDate>Wed, 16 Dec 2015 23:54:22 +0800</pubDate>
+    <lastBuildDate>Wed, 16 Dec 2015 23:54:22 +0800</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
       <item>
         <title>更换博客托管商小记</title>
         <description>&lt;p&gt;2014年9月，Github针对学生用户推出了一个价值丰厚的大礼包，只要用自己学校的EDU邮箱通过认证就能获得这个礼包，里面包括Namecheap域名服务一年、DigitalOcean的100美元抵价券等超值礼品。借这个机会我购买了属于自己的域名timmyxu.me，以及DigitOcean上每个月5美元的VPS。利用这些工具，我曾经搭建过Wordpress这类的博客系统，也配置过Shadowsocks、VPN这类的科学上网工具，还用Github送的一年SSL证书给我的域名加上了HTTPS认证。&lt;/p&gt;

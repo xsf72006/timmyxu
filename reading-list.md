@@ -7,6 +7,18 @@ permalink: /reading-list/
 ####2015
 
 <div class="book">
+	<img class="book-img" src="http://img3.douban.com/lpic/s4066862.jpg" width="180">
+	<hr>
+	<a href="http://book.douban.com/subject/4074636/" target="_blank">放学后</a>
+</div>
+
+<div class="book">
+	<img class="book-img" src="http://img3.douban.com/lpic/s5909700.jpg" width="180">
+	<hr>
+	<a href="http://book.douban.com/subject/3102324/" target="_blank">秘密</a>
+</div>
+
+<div class="book">
 	<img class="book-img" src="http://img4.douban.com/lpic/s28322297.jpg" width="180">
 	<hr>
 	<a href="http://book.douban.com/subject/26389597/" target="_blank">小王子</a>

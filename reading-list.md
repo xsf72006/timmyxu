@@ -4,6 +4,14 @@ title: 阅读清单
 permalink: /reading-list/
 ---
 
+####2016
+
+<div class="book">
+	<img class="book-img" src="http://img3.doubanio.com/lpic/s4094479.jpg" width="180">
+	<hr>
+	<a href="http://book.douban.com/subject/4149140/" target="_blank">解读量化投资</a>
+</div>
+
 ####2015
 
 <div class="book">

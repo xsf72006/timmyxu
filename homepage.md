@@ -14,15 +14,15 @@ Email: <Jp.Huron@nuaa.edu.cn> / <junpeng.hou@devinci.fr> / <jack.hjp@gmail.com>
 
 Address: 40, rue Godefroy, 92800 Puteaux, France
 
-##[Curricula Vitae]({{site.static_files[0].path}})
+##[Curricula Vitae]({{site.static_files[1].path}})
 
-##[Personal Statement]({{site.static_files[1].path}})
+##[Personal Statement]({{site.static_files[2].path}})
 
 ##Summary of Recent Work
-- **Vaidya Black Hole in f(R) Gravity** ([click to see the summary]({{site.static_files[3].path}}))
+- **Vaidya Black Hole in f(R) Gravity** ([click to see the summary]({{site.static_files[4].path}}))
 	- We try to get the solution of Vaidya Black Hole in f(R) gravity and investiaget its thermodynamics properties. But, since it's very hard to obtain the solutions directly, we use another method to calculate the thermodynamics directly.
 	
-- **Possible Connection Between Entropy Production and Uniqueness of Solutions** ([click to see the summary]({{site.static_files[2].path}}))
+- **Possible Connection Between Entropy Production and Uniqueness of Solutions** ([click to see the summary]({{site.static_files[5].path}}))
 	- Frist, we try to explain the entropy production term by considering the black hole as a model somehow like a water drop but failed. Then, I accidently find a possible connection between entropy production term and uniqueness of black hole solutions in a spacetime, which leads further to a clue that we can possibly distinguish the two forms of general spheric metric, althought they can be transmitted to each other by coordinate transformations.
 - **Neutron Stars** (this is a group work, summary not available)
 	- We try to build a new model of neutron stars since Chandrasekhar Limit is found to be silghtly violated. This could be a chance to inveastigate the real process of nuclear action within a neutron stars and also the validity of alternative gravity  in larger scalar.

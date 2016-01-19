@@ -7,6 +7,18 @@ permalink: /reading-list/
 ####2016
 
 <div class="book">
+	<img class="book-img" src="http://img3.doubanio.com/lpic/s1765799.jpg" width="180">
+	<hr>
+	<a href="http://book.douban.com/subject/1827374/" target="_blank">东方快车谋杀案</a>
+</div>
+
+<div class="book">
+	<img class="book-img" src="http://img3.doubanio.com/lpic/s1772249.jpg" width="180">
+	<hr>
+	<a href="http://book.douban.com/subject/1807516/" target="_blank">罗杰疑案</a>
+</div>
+
+<div class="book">
 	<img class="book-img" src="http://img3.douban.com/lpic/s28370252.jpg" width="180">
 	<hr>
 	<a href="http://book.douban.com/subject/26695437/" target="_blank" style="font-size:11px">我是高频交易工程师：知乎董可人自选集</a>

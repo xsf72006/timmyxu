@@ -7,6 +7,12 @@ permalink: /reading-list/
 ####2016
 
 <div class="book">
+	<img class="book-img" src="http://img3.doubanio.com/lpic/s1683067.jpg" width="180">
+	<hr>
+	<a href="http://book.douban.com/subject/1818347/" target="_blank">尼罗河上的惨案</a>
+</div>
+
+<div class="book">
 	<img class="book-img" src="http://img3.doubanio.com/lpic/s2280569.jpg" width="180">
 	<hr>
 	<a href="http://book.douban.com/subject/1903164/" target="_blank">ABC谋杀案</a>

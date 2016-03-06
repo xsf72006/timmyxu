@@ -7,8 +7,9 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://timmyxu.me" # the base hostname & protocol for your site
 #url: "localhost:4000"
-timezone: Asia/Shanghai
+timezone: 'Asia/Shanghai'
 permalink: /:categories/:title/
+future: true
 
 # Build settings
 markdown: kramdown

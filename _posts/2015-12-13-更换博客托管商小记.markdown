@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "更换博客托管商小记"
-date:   2015-12-13 14:32:33
+date:   2015-12-13 14:32:33 +0800
 categories: 生活随想
 tags: jekyll
 abstract: 本博客内容原来托管在主机提供商DigitOcean的VPS上，由于我目前并没有对VPS的需求，鉴于节省经费的目的，暂时停止了DigitOcean的VPS服务，改为托管在著名代码管理平台Github提供的Github Pages服务上。

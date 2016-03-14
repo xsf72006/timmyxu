@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "基于Jekyll的静态博客生成指南"
-date:   2015-04-14 21:41:03
+date:   2015-04-14 21:41:03 +0800
 categories: 技术杂谈
 tags: jekyll
 abstract: 本文主要介绍著名的静态博客生成器 Jekyll 的基本使用方法。不同于 WordPress 等博客系统，Jekyll 生成的站点无需依赖数据库，所有页面都由 Jekyll 静态生成，用户只需使用 Markdown 等标记语言撰写文章并重新生成即可。本站即基于 Jekyll 搭建。

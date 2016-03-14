@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Progress Report on my Academic Career at BUAA"
-date:   2015-04-26 17:02:48
+date:   2015-04-26 17:02:48 +0800
 categories: 生活随想
 tags: english
 abstract: 本文是我的口语课作业。记述大学生涯到目前为止的学业生涯进展报告。英文水平不佳，文中若有语法错误，敬请指正。

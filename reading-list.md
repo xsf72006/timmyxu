@@ -4,7 +4,13 @@ title: 阅读清单
 permalink: /reading-list/
 ---
 
-####2016
+#### 2016
+
+<div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/国境以南太阳以西.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/2174013/" target="_blank">国境以南 太阳以西</a>
+</div>
 
 <div class="book">
 	<img class="book-img" src="{{ site.url }}/assets/readings/且听风吟.jpg" width="180">
@@ -60,7 +66,7 @@ permalink: /reading-list/
 	<a href="https://book.douban.com/subject/4149140/" target="_blank">解读量化投资</a>
 </div>
 
-####2015
+#### 2015
 
 <div class="book">
 	<img class="book-img" src="{{ site.url }}/assets/readings/我是猫.jpg" width="180">

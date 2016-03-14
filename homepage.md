@@ -4,9 +4,9 @@ title: Application Homepage of Mr. Hou, Junpeng
 permalink: /hjp/
 ---
 
-#Welcome to Application Homepage of 
+# Welcome to Application Homepage of 
 
-#Mr. Hou, Junpeng
+# Mr. Hou, Junpeng
 
 Phone: +33 06 25 69 79 69 / +86 130 7255 6862
 
@@ -14,11 +14,11 @@ Email: <Jp.Huron@nuaa.edu.cn> / <junpeng.hou@devinci.fr> / <jack.hjp@gmail.com>
 
 Address: 40, rue Godefroy, 92800 Puteaux, France
 
-##[Curricula Vitae]({{ site.url }}/assets/hjp/CV_Junpeng-Hou.pdf)
+## [Curricula Vitae]({{ site.url }}/assets/hjp/CV_Junpeng-Hou.pdf)
 
-##[Personal Statement]({{ site.url }}/assets/hjp/PS_Junpeng-Hou.pdf)
+## [Personal Statement]({{ site.url }}/assets/hjp/PS_Junpeng-Hou.pdf)
 
-##Summary of Recent Work
+## Summary of Recent Work
 - **Vaidya Black Hole in f(R) Gravity** <!-- ([click to see the summary]({{ site.url }}/assets/hjp/Summary_Vaidya-Black-Hole-in-fR-Gravity.pdf)) -->
 	- We try to get the solution of Vaidya Black Hole in f(R) gravity and investiaget its thermodynamics properties. But, since it's very hard to obtain the solutions directly, we use another method to calculate the thermodynamics directly.
 	
@@ -27,9 +27,9 @@ Address: 40, rue Godefroy, 92800 Puteaux, France
 - **Neutron Stars** (this is a group work, summary not available)
 	- We try to build a new model of neutron stars since Chandrasekhar Limit is found to be silghtly violated. This could be a chance to inveastigate the real process of nuclear action within a neutron stars and also the validity of alternative gravity  in larger scalar.
 
-##Recommandation Letters
+## Recommandation Letters
 
-#####Note: one need to contact with the professors directly to get the RLs
+##### Note: one need to contact with the professors directly to get the RLs
 - Dr. Ya-peng Hu, Associate Professor <huyp@nuaa.edu.cn>
 	- my principal advisor in General Theory of Relativity and Cosmology
 - Dr. Xiao-tao He, Associate Professor <hext@nuaa.edu.cn>

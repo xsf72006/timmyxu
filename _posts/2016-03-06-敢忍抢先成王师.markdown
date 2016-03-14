@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "敢忍抢先成王师"
-date:   2016-03-06 17:05:24
+date:   2016-03-06 17:05:24 +0800
 categories: 读史明智
 tags: 史记 读后感
 abstract: 读《史记·留侯世家》有感

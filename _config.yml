@@ -9,7 +9,6 @@ url: "http://timmyxu.me" # the base hostname & protocol for your site
 #url: "localhost:4000"
 timezone: 'Asia/Shanghai'
 permalink: /:categories/:title/
-future: true
 
 # Build settings
 markdown: kramdown

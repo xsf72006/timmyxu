@@ -7,6 +7,12 @@ permalink: /reading-list/
 #### 2016
 
 <div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/告别圆舞曲.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/24845894/" target="_blank">告别圆舞曲</a>
+</div>
+
+<div class="book">
 	<img class="book-img" src="{{ site.url }}/assets/readings/国境以南太阳以西.jpg" width="180">
 	<hr>
 	<a href="https://book.douban.com/subject/2174013/" target="_blank">国境以南 太阳以西</a>

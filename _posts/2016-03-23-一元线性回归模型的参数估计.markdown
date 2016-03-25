@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "一元线性回归模型的参数估计"
+date:   2016-03-23 23:29:30 +0800
+categories: 数学
+tags: 计量经济学 回归模型 参数估计
+abstract: 参数估计推导过程的一个详解
+comments: true
+---
+
+PRF(Population Regression Function): 总体回归函数
+
+$$ Y_i = \beta_1 + \beta_2X_i + u_i $$
+
+SRF(Sample Regression Function): 样本回归函数
+
+$$
+\begin{align}
+Y_i &= \hat{\beta_1} + \hat{\beta_2}X_i + \hat{u_i} \\
+	&= \hat{Y_i} + \hat{u_i}
+\end{align}
+$$
+
+PRF无法直接观测得到，因此我们需要通过SRF来估计PRF，即 $$ \hat{Y_i} $$ 是 $$ Y_i $$ 的估计值。
+
+将SRF作如下变换：
+
+$$
+\begin{align}
+\hat{u_i} &= Y_i - \hat{Y_i} \\
+		  &= Y_i - \hat{\beta_1} - \hat{\beta_2}X_i
+\end{align}
+$$
+
+$$ \hat{u_i} $$ 即样本中，实际 $$ X_i $$ 对应的 $$ Y_i $$ 值与SRF估计出来的 $$ \hat{Y_i} $$ 值之差。
+
+要想 $$ \hat{Y_i} $$ 与  $$ Y_i $$ 与 尽量接近，即，求参数 $$ \hat{\beta_1},\hat{\beta_2} $$ 的估计值，使得 $$ \sum \hat{u_i^2} $$ 最小。
+
+根据
+
+$$
+\begin{align}
+\sum \hat{u_i^2} &= \sum (Y_i - \hat{Y_i})^2 \\
+                 &= \sum (Y_i - \hat{\beta_1} - \hat{\beta_2}X_i)^2
+\end{align}
+$$
+
+若要 $$ \sum \hat{u_i^2} $$ 最小，即求 $$ \sum (Y_i - \hat{\beta_1} - \hat{\beta_2}X_i)^2 $$ 关于 $$ (\hat{\beta_1},\hat{\beta_2}) $$ 的二元函数的最小值。分别对 $$ (\hat{\beta_1},\hat{\beta_2}) $$ 求偏微分，并令其等于0，可得（推导过程省略）
+
+$$
+\begin{align}
+\sum Y_i &= n\hat{\beta_1} + \hat{\beta_2}\sum X_i \\
+\sum Y_iX_i &= \hat{\beta_1}\sum X_i + \hat{\beta_2}\sum X_i^2
+\end{align}
+$$
+
+联立上述两个等式，可得
+
+$$
+\begin{align}
+\hat{\beta_2} &= \dfrac{n\sum X_iY_i - \sum X_i \sum Y_i}{n\sum X_i^2 - (\sum X_i)^2} \\ \\
+              &= \dfrac{\sum X_iY_i - n\bar{X}\bar{Y}}{\sum X_i^2 - n\bar{X}\bar{X}} \\ \\
+              &= \dfrac{\sum X_iY_i - n\bar{X}\bar{Y} - n\bar{X}\bar{Y} + n\bar{X}\bar{Y}}{\sum X_i^2 - n\bar{X}\bar{X} - n\bar{X}\bar{X} + n\bar{X}\bar{X}} \\ \\
+              &= \dfrac{\sum X_iY_i - \bar{X}\sum Y_i - \bar{Y}\sum X_i + \sum \bar{X}\bar{Y}}{\sum X_i^2 - 2\bar{X}\sum X_i + \sum \bar{X}^2} \\ \\
+              &= \dfrac{\sum (X_iY_i - \bar{X}Y_i - \bar{Y}X_i + \bar{X}\bar{Y})}{\sum (X_i^2 - 2\bar{X}X_i + \bar{X}^2)} \\ \\
+              &= \dfrac{\sum [X_i(Y_i - \bar{Y}) - \bar{X}(Y_i - \bar{Y})]}{\sum (X_i - \bar{X})^2} \\ \\
+              &= \dfrac{\sum [(X_i - \bar{X})(Y_i - \bar{Y})]}{\sum (X_i - \bar{X})^2} \\ \\
+              &= \dfrac{\sum x_iy_i}{\sum x_i^2} \\ \\
+              \\
+
+\hat{\beta_1} &= \dfrac{\sum X_i^2\sum Y_i - \sum X_i \sum X_iY_i}{n\sum X_i^2 - (\sum X_i)^2} \\ \\
+              &= \bar{Y} - \hat{\beta_2}\bar{X}
+\end{align}
+$$
+
+其中，
+
+$$
+\begin{align}
+\bar{X} &= \dfrac{1}{n}\sum X_i \\
+\bar{Y} &= \dfrac{1}{n}\sum Y_i \\
+x_i &= (X_i - \bar{X}) \\
+y_i &= (Y_i - \bar{Y})
+\end{align}
+$$
+
+经过代数变换，$$ \hat{\beta_2} $$ 还可以变换成如下形式
+
+$$
+\begin{align}
+\hat{\beta_2} &= \dfrac{\sum x_iy_i}{\sum x_i^2} \\ \\
+              &= \dfrac{\sum x_iY_i}{\sum X_i^2 - n\bar{X}^2} \\ \\
+              &= \dfrac{\sum X_iy_i}{\sum X_i^2 - n\bar{X}^2}
+\end{align}
+$$
+
+这学期在上[计量经济学基础](https://book.douban.com/subject/5258945/)，在学到一元线性回归模型的参数估计时，别的推导过程都很简单，但是看到 $$ \hat{\beta_2} $$ 的推导时卡了一下，因为书上直接由 $$ \dfrac{n\sum X_iY_i - \sum X_i \sum Y_i}{n\sum X_i^2 - (\sum X_i)^2} $$ 推出了 $$ \dfrac{\sum [(X_i - \bar{X})(Y_i - \bar{Y})]}{\sum (X_i - \bar{X})^2} $$，我想了好久（比较愚笨），最后根据结果才反推出过程的，这也是促使我记录这篇博文的主要因素。
+
+文中若有疏漏之处，敬请在评论中指正。如果大神有更好的思路，也请在评论区交流，谢谢。

@@ -111,6 +111,14 @@
           
           <a class="page-link" href="/tags/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">标签：参数估计</a>
           
+        
+          
+          <a class="page-link" href="/tags/cocos2d-x/">标签：cocos2d-x</a>
+          
+        
+          
+          <a class="page-link" href="/tags/javascript/">标签：javascript</a>
+          
          -->
         <a class="page-link" href="/reading-list/">阅读清单</a>
         <a class="page-link" href="/about/">关于</a>
@@ -167,24 +175,22 @@
 
 <p>一个基本的 Jekyll 网站的目录结构一般是像这样的：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.
-├── _config.yml
-├── _drafts
-|	├──begin-with-the-crazy-ideas.textile
-|	└──on-simplicity-in-technology.markdown
-├──_includes
-|	├── footer.html
-|	└── header.html
-├── _layouts
-|	├── default.html
-|	└── post.html
-├── _posts
-|	├── 2007-10-29-why-every-programmer-should-play-nethack.markdown
-|	└── 2009-04-26-barcamp-boston-4-roundup.markdown
-├── _site
-└── index.html
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">	.
+	├── _config.yml
+	├── _drafts
+	|	├──begin-with-the-crazy-ideas.textile
+	|	└──on-simplicity-in-technology.markdown
+	├──_includes
+	|	├── footer.html
+	|	└── header.html
+	├── _layouts
+	|	├── default.html
+	|	└── post.html
+	├── _posts
+	|	├── 2007-10-29-why-every-programmer-should-play-nethack.markdown
+	|	└── 2009-04-26-barcamp-boston-4-roundup.markdown
+	├── _site
+	└── index.html</code></pre></figure>
 
 <ol>
   <li>_config.yml: 配置文件，例如站点 title，permalink 的格式等在这个文件中配置，在布局文件中可以用liquid语言进行调用。</li>
@@ -234,12 +240,10 @@
 
 <p>正是 YAML 头信息开始让 Jekyll 变的很酷。任何只要包含 YAML 头信息的文件在 Jekyll 中都能被当做一个特殊的文件来处理。头信息必须在文件的开始部分，并且需要按照 YAML 的格式写在两行三虚线之间。下面是一个基本的例子：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
-layout: post
-title: Blogging Like a Hacker
----
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">	---
+	layout: post
+	title: Blogging Like a Hacker
+	---</code></pre></figure>
 
 <p>在 YAML 头信息中，你可以使用已经定义好的全局变量，如 <code class="highlighter-rouge">layout</code>，<code class="highlighter-rouge">permalink</code> 等，也可以自定义变量，如 <code class="highlighter-rouge">title</code>，使其可以在样式模板中使用这个变量。调用自定义变量方法是 <code class="highlighter-rouge"><span class="p">{</span><span class="err">\{page.title</span><span class="p">}</span><span class="err">\}</span></code>，父属性是 <strong>page</strong>。</p>
 
@@ -273,14 +277,12 @@ title: Blogging Like a Hacker
 
 <p>Jekyll 提供了分类（category）和标签（tag）的全局变量，我们可以在自己文章的 YAML 头信息里加上相关信息，如下：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
-layout: post
-title:  "基于Jekyll的静态博客生成初级指南"
-categories: 技术杂谈
-tags: jekyll
----
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">	---
+	layout: post
+	title:  "基于Jekyll的静态博客生成初级指南"
+	categories: 技术杂谈
+	tags: jekyll
+	---</code></pre></figure>
 
 <p>如果想在文章正文显示这些分类和标签，那么在文章的模板中（<code class="highlighter-rouge">_layout/post.html</code>）相应位置添加调用即可。</p>
 
@@ -363,7 +365,7 @@ tags: jekyll
             <ul class="category-list">
               
               <a  class="category-item" href="/categories/技术杂谈/">
-              <li>技术杂谈<span class="category-badge">1</span></li>
+              <li>技术杂谈<span class="category-badge">2</span></li>
               </a>
               
               <a  class="category-item" href="/categories/生活随想/">
@@ -397,6 +399,10 @@ tags: jekyll
               <a href="/tags/回归模型/ " class="tag-item" title="1篇文章">回归模型</a>
               
               <a href="/tags/参数估计/ " class="tag-item" title="1篇文章">参数估计</a>
+              
+              <a href="/tags/cocos2d-x/ " class="tag-item" title="1篇文章">cocos2d-x</a>
+              
+              <a href="/tags/javascript/ " class="tag-item" title="1篇文章">javascript</a>
               
             </ul>
           </aside>

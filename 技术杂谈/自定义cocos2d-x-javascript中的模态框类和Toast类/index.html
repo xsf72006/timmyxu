@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>自定义cocos2d-x引擎中的模态框类和消息通知类</title>
+  <meta name="description" content="模态框类（Modal）">
+
+  <meta property="wb:webmaster" content="e83db275b8962cc8" />
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://timmyxu.me/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E8%87%AA%E5%AE%9A%E4%B9%89cocos2d-x-javascript%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%80%81%E6%A1%86%E7%B1%BB%E5%92%8CToast%E7%B1%BB/">
+  <link rel="alternate" type="application/rss+xml" title="菩提树下有只蝉" href="http://timmyxu.me/feed.xml" />
+</head>
+
+
+  <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-31169879-1', 'auto');
+      ga('send', 'pageview');
+
+  </script>
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">菩提树下有只蝉</a>
+    <p class="site-subtitle">不鸣则已，一鸣惊人</p>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <!-- 
+          
+          <a class="page-link" href="/404.html">您访问的页面不存在</a>
+          
+        
+          
+          <a class="page-link" href="/about/">关于</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/hjp/">Application Homepage of Mr. Hou, Junpeng</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/reading-list/">阅读清单</a>
+          
+        
+          
+          <a class="page-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/">归档：技术杂谈</a>
+          
+        
+          
+          <a class="page-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/">归档：生活随想</a>
+          
+        
+          
+          <a class="page-link" href="/categories/%E8%AF%BB%E5%8F%B2%E6%98%8E%E6%99%BA/">归档：读史明智</a>
+          
+        
+          
+          <a class="page-link" href="/categories/%E6%95%B0%E5%AD%A6/">归档：数学</a>
+          
+        
+          
+          <a class="page-link" href="/tags/jekyll/">标签：jekyll</a>
+          
+        
+          
+          <a class="page-link" href="/tags/english/">标签：english</a>
+          
+        
+          
+          <a class="page-link" href="/tags/%E5%8F%B2%E8%AE%B0/">标签：史记</a>
+          
+        
+          
+          <a class="page-link" href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/">标签：读后感</a>
+          
+        
+          
+          <a class="page-link" href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/">标签：计量经济学</a>
+          
+        
+          
+          <a class="page-link" href="/tags/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">标签：回归模型</a>
+          
+        
+          
+          <a class="page-link" href="/tags/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">标签：参数估计</a>
+          
+        
+          
+          <a class="page-link" href="/tags/cocos2d-x/">标签：cocos2d-x</a>
+          
+        
+          
+          <a class="page-link" href="/tags/javascript/">标签：javascript</a>
+          
+         -->
+        <a class="page-link" href="/reading-list/">阅读清单</a>
+        <a class="page-link" href="/about/">关于</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="page-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">自定义cocos2d-x引擎中的模态框类和消息通知类</h1>
+    <p class="post-meta">
+    2016年04月01日
+    -
+    标签：
+    
+    <a href="/tags/cocos2d-x/ " class="tag-item">cocos2d-x</a>
+    
+    <a href="/tags/javascript/ " class="tag-item">javascript</a>
+    
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h3 id="modal">模态框类（Modal）</h3>
+
+<p><code class="highlighter-rouge">模态框</code>就是一个包含内容和按钮的对话框，用户必须先响应对话框才能继续操作应用程序。</p>
+
+<p>本项目中的模态框需求是可以自定义标题、内容，可选关闭按钮以及设置功能按钮组。我们将这个模态框类写成一个Layer，便于项目全局使用，Layer是cocos2d-x中的概念，可以参考<a href="http://www.cocos2d-x.org/wiki/Layer">这里</a>。</p>
+
+<p>模态框类的参考代码如下：</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">PopLayer</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">Layer</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="c1">//设置成员变量</span>
+  <span class="na">layerBg</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+  <span class="na">titleLabel</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+  <span class="na">contentLabel</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+  <span class="na">listener</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+  <span class="na">menu</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+  <span class="na">cancelMenu</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+
+  <span class="na">ctor</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">size</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">winSize</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">layerBg</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">modal</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">layerBg</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="nx">size</span><span class="p">.</span><span class="nx">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="nx">size</span><span class="p">.</span><span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">layerBg</span><span class="p">.</span><span class="nx">setLocalZOrder</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">layerBg</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleLabel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">LabelTTF</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="s2">"Arial"</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleLabel</span><span class="p">.</span><span class="nx">setFontFillColor</span><span class="p">(</span><span class="nx">cc</span><span class="p">.</span><span class="nx">color</span><span class="p">.</span><span class="nx">BLACK</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleLabel</span><span class="p">.</span><span class="nx">setAnchorPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleLabel</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="mi">230</span><span class="o">+</span><span class="p">(</span><span class="mi">500</span><span class="o">-</span><span class="k">this</span><span class="p">.</span><span class="nx">titleLabel</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">395</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">titleLabel</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">LabelTTF</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="s2">"Arial"</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setFontFillColor</span><span class="p">(</span><span class="nx">cc</span><span class="p">.</span><span class="nx">color</span><span class="p">.</span><span class="nx">BLACK</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setAnchorPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="mi">230</span><span class="o">+</span><span class="p">(</span><span class="mi">500</span><span class="o">-</span><span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">340</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setDimensions</span><span class="p">(</span><span class="nx">cc</span><span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="mi">460</span><span class="p">,</span><span class="mi">140</span><span class="p">));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">textAlign</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">TEXT_ALIGNMENT_CENTER</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="nx">cc</span><span class="p">.</span><span class="nx">MenuItemFont</span><span class="p">.</span><span class="nx">setFontName</span><span class="p">(</span><span class="s2">"Arial"</span><span class="p">);</span>
+    <span class="nx">cc</span><span class="p">.</span><span class="nx">MenuItemFont</span><span class="p">.</span><span class="nx">setFontSize</span><span class="p">(</span><span class="mi">18</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">cancelBtn</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">MenuItemFont</span><span class="p">(</span><span class="s2">"Close"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">sender</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="p">},</span> <span class="k">this</span><span class="p">);</span>
+    <span class="nx">cancelBtn</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">color</span><span class="p">.</span><span class="nx">RED</span><span class="p">;</span>
+    <span class="nx">cancelBtn</span><span class="p">.</span><span class="nx">setAnchorPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+    <span class="nx">cancelBtn</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">cancelMenu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">Menu</span><span class="p">(</span><span class="nx">cancelBtn</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cancelMenu</span><span class="p">.</span><span class="nx">setAnchorPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cancelMenu</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="mi">730</span> <span class="o">-</span> <span class="nx">cancelBtn</span><span class="p">.</span><span class="nx">width</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">395</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">cancelMenu</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">listener</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">EventListener</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+      <span class="na">event</span><span class="p">:</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">EventListener</span><span class="p">.</span><span class="nx">TOUCH_ONE_BY_ONE</span><span class="p">,</span>
+      <span class="na">swallowTouches</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">onTouchBegan</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">touch</span><span class="p">,</span><span class="nx">event</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">},</span>
+  <span class="c1">//设置按钮组</span>
+  <span class="na">addMenu</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">menu</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">menu</span> <span class="o">=</span> <span class="nx">menu</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">menu</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="c1">//设置标题</span>
+  <span class="na">setTitle</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleLabel</span><span class="p">.</span><span class="nx">setString</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleLabel</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="mi">230</span><span class="o">+</span><span class="p">(</span><span class="mi">500</span><span class="o">-</span><span class="k">this</span><span class="p">.</span><span class="nx">titleLabel</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">395</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="c1">//设置显示内容</span>
+  <span class="na">setContent</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setString</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="mi">230</span><span class="o">+</span><span class="p">(</span><span class="mi">500</span><span class="o">-</span><span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">340</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="c1">//设置关闭按钮</span>
+  <span class="na">setCloseBtn</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">flag</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cancelMenu</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="nx">flag</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="c1">//显示模态框</span>
+  <span class="na">show</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">cc</span><span class="p">.</span><span class="nx">eventManager</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">listener</span><span class="p">,</span><span class="k">this</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="c1">//隐藏模态框（一般写在回调里）</span>
+  <span class="na">hide</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">menu</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">menu</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+    <span class="nx">cc</span><span class="p">.</span><span class="nx">eventManager</span><span class="p">.</span><span class="nx">removeListener</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">listener</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>调用代码如下：</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//新建Layer，添加到场景（Scene）中</span>
+<span class="nx">modalLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PopLayer</span><span class="p">(</span><span class="s2">"this is title"</span><span class="p">,</span><span class="s2">"this is content"</span><span class="p">);</span>
+<span class="nx">modalLayer</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="c1">//一开始不想让这个层显示</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">modalLayer</span><span class="p">);</span>
+
+<span class="c1">//调用Modal类</span>
+<span class="c1">//添加自定义的菜单menu</span>
+<span class="nx">modalLayer</span><span class="p">.</span><span class="nx">addMenu</span><span class="p">(</span><span class="nx">menu</span><span class="p">);</span>
+<span class="c1">//设置标题</span>
+<span class="nx">modalLayer</span><span class="p">.</span><span class="nx">setTitle</span><span class="p">(</span><span class="s2">"Title Example"</span><span class="p">);</span>
+<span class="c1">//设置内容</span>
+<span class="nx">modalLayer</span><span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s2">"Content Example"</span><span class="p">);</span>
+<span class="c1">//不显示关闭按钮</span>
+<span class="nx">modalLayer</span><span class="p">.</span><span class="nx">setCloseBtn</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="c1">//显示模态框</span>
+<span class="nx">modalLayer</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="c1">//关闭模态框</span>
+<span class="nx">modalLayer</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span><span class="c1">//注意：一般关闭模态框层的代码写在按钮的回调中</span></code></pre></figure>
+
+<h3 id="toast">消息通知类（Toast）</h3>
+
+<p><code class="highlighter-rouge">Toast</code>是一个简易的消息提示框。当显示Toast时，它永远不会获得焦点，无法被点击。用户可以对应用程序的其他部分进行操作。Toast类的思想就是尽可能不引人注意，同时还向用户显示信息，希望他们看到。而且Toast显示的时间有限，Toast会根据用户设置的显示时间后自动消失。</p>
+
+<p>Toast类的参考代码如下：</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">ToastLayer</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">Layer</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="na">contentLabel</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+  <span class="na">ctor</span><span class="p">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">size</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">winSize</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">bg</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">toast</span><span class="p">);</span>
+    <span class="nx">bg</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="nx">size</span><span class="p">.</span><span class="nx">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">size</span><span class="p">.</span><span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">bg</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">LabelTTF</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="s2">"Arial"</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setFontFillColor</span><span class="p">(</span><span class="nx">cc</span><span class="p">.</span><span class="nx">color</span><span class="p">.</span><span class="nx">BLACK</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setAnchorPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">560</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setDimensions</span><span class="p">(</span><span class="nx">cc</span><span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="mi">860</span><span class="p">,</span><span class="mi">70</span><span class="p">));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">textAlign</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">TEXT_ALIGNMENT_CENTER</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">verticalAlign</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">VERTICAL_TEXT_ALIGNMENT_CENTER</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setCascadeOpacityEnabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="c1">//设置Toast显示内容</span>
+  <span class="na">setContent</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">contentLabel</span><span class="p">.</span><span class="nx">setString</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="c1">//设置Toast显示时间，包括显示持续时间和淡出持续时间</span>
+  <span class="na">show</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">delay</span><span class="p">,</span> <span class="nx">sec</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">delayOut</span> <span class="o">=</span> <span class="nx">delay</span> <span class="o">||</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">timeOut</span> <span class="o">=</span> <span class="nx">sec</span> <span class="o">||</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setOpacity</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">runAction</span><span class="p">(</span><span class="nx">cc</span><span class="p">.</span><span class="nx">sequence</span><span class="p">(</span><span class="nx">cc</span><span class="p">.</span><span class="nx">delayTime</span><span class="p">(</span><span class="nx">delayOut</span><span class="p">),</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">fadeOut</span><span class="p">(</span><span class="nx">timeOut</span><span class="p">)));</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>调用代码如下：</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//新建Layer，添加到场景（Scene）中</span>
+<span class="nx">toastLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ToastLayer</span><span class="p">(</span><span class="s2">"Welcome to Toast"</span><span class="p">);</span>
+<span class="nx">toastLayer</span><span class="p">.</span><span class="nx">setOpacity</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//初始设置Toast层不显示</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">toastLayer</span><span class="p">);</span>
+
+<span class="c1">//调用Toast类</span>
+<span class="c1">//设置Toast显示内容</span>
+<span class="nx">toastLayer</span><span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+<span class="c1">//显示Toast</span>
+<span class="nx">toastLayer</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span></code></pre></figure>
+
+<h3 id="section">总结</h3>
+
+<p>我的代码还有很多瑕疵，有些地方处理得不严谨，仅供大家作个参考，希望懂cocos2dx的大神能够提出一些批评。欢迎大家在评论里交流学习。</p>
+
+  </article>
+  <div>
+    <p class="post-meta">
+    本文分类：<a href="/categories/技术杂谈/ ">技术杂谈</a>
+    <p>
+  </div>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'xsf72006';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</div>
+
+        </div>
+        <div class="sidebar-category">
+          <aside>
+            <ul class="category-list">
+              
+              <a  class="category-item" href="/categories/技术杂谈/">
+              <li>技术杂谈<span class="category-badge">2</span></li>
+              </a>
+              
+              <a  class="category-item" href="/categories/生活随想/">
+              <li>生活随想<span class="category-badge">2</span></li>
+              </a>
+              
+              <a  class="category-item" href="/categories/读史明智/">
+              <li>读史明智<span class="category-badge">1</span></li>
+              </a>
+              
+              <a  class="category-item" href="/categories/数学/">
+              <li>数学<span class="category-badge">1</span></li>
+              </a>
+              
+            </ul>
+          </aside>
+          <aside>            
+            <ul class="category-list">
+              <h3>标签</h3>
+              
+              <a href="/tags/jekyll/ " class="tag-item" title="2篇文章">jekyll</a>
+              
+              <a href="/tags/english/ " class="tag-item" title="1篇文章">english</a>
+              
+              <a href="/tags/史记/ " class="tag-item" title="1篇文章">史记</a>
+              
+              <a href="/tags/读后感/ " class="tag-item" title="1篇文章">读后感</a>
+              
+              <a href="/tags/计量经济学/ " class="tag-item" title="1篇文章">计量经济学</a>
+              
+              <a href="/tags/回归模型/ " class="tag-item" title="1篇文章">回归模型</a>
+              
+              <a href="/tags/参数估计/ " class="tag-item" title="1篇文章">参数估计</a>
+              
+              <a href="/tags/cocos2d-x/ " class="tag-item" title="1篇文章">cocos2d-x</a>
+              
+              <a href="/tags/javascript/ " class="tag-item" title="1篇文章">javascript</a>
+              
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">菩提树下有只蝉</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          
+          <a href="/categories/技术杂谈/ ">
+          <li>技术杂谈</li>
+          </a>
+          
+          <a href="/categories/生活随想/ ">
+          <li>生活随想</li>
+          </a>
+          
+          <a href="/categories/读史明智/ ">
+          <li>读史明智</li>
+          </a>
+          
+          <a href="/categories/数学/ ">
+          <li>数学</li>
+          </a>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          <li>
+            <i class="fa fa-rss fa-fw"></i>
+            <a href="/feed.xml">
+              <span class="username">RSS</span>
+            </a>
+          </li>
+          <li>
+            <i class="fa fa-github fa-fw"></i>
+            <a href="https://github.com/xsf72006" target="_blank">
+              <span class="username">Github</span>
+            </a>
+          </li>
+          <li>
+            <i class="fa fa-weibo fa-fw"></i>
+            <a href="http://weibo.com/xsf72006" target="_blank">
+              <span class="username">Weibo</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+      探索：
+      <ul>
+        <li><a href="http://szm.me" target="_blank">宋子明的博客</a></li>
+        <li><a href="http://www.renfei.org" target="_blank">Renfei Song</a></li>
+        <li><a href="http://wanzy.me" target="_blank">万昭祎的个人网站</a></li>
+        <li><a href="http://wcqblog.github.io" target="_blank">WunGCQ的博客</a></li>
+      </ul>
+      </div>
+
+      <div>
+        <p class="copyright">©2015 菩提树下有只蝉</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

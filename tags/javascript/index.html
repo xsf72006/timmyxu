@@ -6,13 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>一元线性回归模型的参数估计</title>
-  <meta name="description" content="PRF(Population Regression Function): 总体回归函数">
+  <title>标签：javascript</title>
+  <meta name="description" content="TimmyXu的个人博客，内容主要是IT技术，传统文化，个人日记。
+">
 
   <meta property="wb:webmaster" content="e83db275b8962cc8" />
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://timmyxu.me/%E6%95%B0%E5%AD%A6/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
+  <link rel="canonical" href="http://timmyxu.me/tags/javascript/">
   <link rel="alternate" type="application/rss+xml" title="菩提树下有只蝉" href="http://timmyxu.me/feed.xml" />
 </head>
 
@@ -132,132 +133,17 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="page-main">
-          <div class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">一元线性回归模型的参数估计</h1>
-    <p class="post-meta">
-    2016年03月23日
-    -
-    标签：
-    
-    <a href="/tags/计量经济学/ " class="tag-item">计量经济学</a>
-    
-    <a href="/tags/回归模型/ " class="tag-item">回归模型</a>
-    
-    <a href="/tags/参数估计/ " class="tag-item">参数估计</a>
-    
-    </p>
-  </header>
-
-  <article class="post-content">
-    <p>PRF(Population Regression Function): 总体回归函数</p>
-
-<script type="math/tex; mode=display">Y_i = \beta_1 + \beta_2X_i + u_i</script>
-
-<p>SRF(Sample Regression Function): 样本回归函数</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-Y_i &= \hat{\beta_1} + \hat{\beta_2}X_i + \hat{u_i} \\
-	&= \hat{Y_i} + \hat{u_i}
-\end{align} %]]></script>
-
-<p>PRF无法直接观测得到，因此我们需要通过SRF来估计PRF，即 <script type="math/tex">\hat{Y_i}</script> 是 <script type="math/tex">Y_i</script> 的估计值。</p>
-
-<p>将SRF作如下变换：</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\hat{u_i} &= Y_i - \hat{Y_i} \\
-		  &= Y_i - \hat{\beta_1} - \hat{\beta_2}X_i
-\end{align} %]]></script>
-
-<p><script type="math/tex">\hat{u_i}</script> 即样本中，实际 <script type="math/tex">X_i</script> 对应的 <script type="math/tex">Y_i</script> 值与SRF估计出来的 <script type="math/tex">\hat{Y_i}</script> 值之差。</p>
-
-<p>要想 <script type="math/tex">\hat{Y_i}</script> 与  <script type="math/tex">Y_i</script> 与 尽量接近，即，求参数 <script type="math/tex">\hat{\beta_1},\hat{\beta_2}</script> 的估计值，使得 <script type="math/tex">\sum \hat{u_i^2}</script> 最小。</p>
-
-<p>根据</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\sum \hat{u_i^2} &= \sum (Y_i - \hat{Y_i})^2 \\
-                 &= \sum (Y_i - \hat{\beta_1} - \hat{\beta_2}X_i)^2
-\end{align} %]]></script>
-
-<p>若要 <script type="math/tex">\sum \hat{u_i^2}</script> 最小，即求 <script type="math/tex">\sum (Y_i - \hat{\beta_1} - \hat{\beta_2}X_i)^2</script> 关于 <script type="math/tex">(\hat{\beta_1},\hat{\beta_2})</script> 的二元函数的最小值。分别对 <script type="math/tex">(\hat{\beta_1},\hat{\beta_2})</script> 求偏微分，并令其等于0，可得（推导过程省略）</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\sum Y_i &= n\hat{\beta_1} + \hat{\beta_2}\sum X_i \\
-\sum Y_iX_i &= \hat{\beta_1}\sum X_i + \hat{\beta_2}\sum X_i^2
-\end{align} %]]></script>
-
-<p>联立上述两个等式，可得</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\hat{\beta_2} &= \dfrac{n\sum X_iY_i - \sum X_i \sum Y_i}{n\sum X_i^2 - (\sum X_i)^2} \\ \\
-              &= \dfrac{\sum X_iY_i - n\bar{X}\bar{Y}}{\sum X_i^2 - n\bar{X}\bar{X}} \\ \\
-              &= \dfrac{\sum X_iY_i - n\bar{X}\bar{Y} - n\bar{X}\bar{Y} + n\bar{X}\bar{Y}}{\sum X_i^2 - n\bar{X}\bar{X} - n\bar{X}\bar{X} + n\bar{X}\bar{X}} \\ \\
-              &= \dfrac{\sum X_iY_i - \bar{X}\sum Y_i - \bar{Y}\sum X_i + \sum \bar{X}\bar{Y}}{\sum X_i^2 - 2\bar{X}\sum X_i + \sum \bar{X}^2} \\ \\
-              &= \dfrac{\sum (X_iY_i - \bar{X}Y_i - \bar{Y}X_i + \bar{X}\bar{Y})}{\sum (X_i^2 - 2\bar{X}X_i + \bar{X}^2)} \\ \\
-              &= \dfrac{\sum [X_i(Y_i - \bar{Y}) - \bar{X}(Y_i - \bar{Y})]}{\sum (X_i - \bar{X})^2} \\ \\
-              &= \dfrac{\sum [(X_i - \bar{X})(Y_i - \bar{Y})]}{\sum (X_i - \bar{X})^2} \\ \\
-              &= \dfrac{\sum x_iy_i}{\sum x_i^2} \\ \\
-              \\
-
-\hat{\beta_1} &= \dfrac{\sum X_i^2\sum Y_i - \sum X_i \sum X_iY_i}{n\sum X_i^2 - (\sum X_i)^2} \\ \\
-              &= \bar{Y} - \hat{\beta_2}\bar{X}
-\end{align} %]]></script>
-
-<p>其中，</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\bar{X} &= \dfrac{1}{n}\sum X_i \\
-\bar{Y} &= \dfrac{1}{n}\sum Y_i \\
-x_i &= (X_i - \bar{X}) \\
-y_i &= (Y_i - \bar{Y})
-\end{align} %]]></script>
-
-<p>经过代数变换，<script type="math/tex">\hat{\beta_2}</script> 还可以变换成如下形式</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\hat{\beta_2} &= \dfrac{\sum x_iy_i}{\sum x_i^2} \\ \\
-              &= \dfrac{\sum x_iY_i}{\sum X_i^2 - n\bar{X}^2} \\ \\
-              &= \dfrac{\sum X_iy_i}{\sum X_i^2 - n\bar{X}^2}
-\end{align} %]]></script>
-
-<p>这学期在上<a href="https://book.douban.com/subject/5258945/">计量经济学基础</a>，在学到一元线性回归模型的参数估计时，别的推导过程都很简单，但是看到 <script type="math/tex">\hat{\beta_2}</script> 的推导时卡了一下，因为书上直接由 <script type="math/tex">\dfrac{n\sum X_iY_i - \sum X_i \sum Y_i}{n\sum X_i^2 - (\sum X_i)^2}</script> 推出了 <script type="math/tex">\dfrac{\sum [(X_i - \bar{X})(Y_i - \bar{Y})]}{\sum (X_i - \bar{X})^2}</script>，我想了好久（比较愚笨），最后根据结果才反推出过程的，这也是促使我记录这篇博文的主要因素。</p>
-
-<p>文中若有疏漏之处，敬请在评论中指正。如果大神有更好的思路，也请在评论区交流，谢谢。</p>
-
-  </article>
-  <div>
-    <p class="post-meta">
-    本文分类：<a href="/categories/数学/ ">数学</a>
-    <p>
-  </div>
-  
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'xsf72006';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-  
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-</div>
-
+          <h3 class="category">标签：javascript</h3>
+<ul class="post-list">
+	
+	<li>
+    <span class="post-meta">2016年04月01日</span>
+    <h2>
+    	<a class="post-link" href="/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E8%87%AA%E5%AE%9A%E4%B9%89cocos2d-x-javascript%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%80%81%E6%A1%86%E7%B1%BB%E5%92%8CToast%E7%B1%BB/">自定义cocos2d-x引擎中的模态框类和消息通知类</a>
+    </h2>
+    </li>
+	
+</ul>
         </div>
         <div class="sidebar-category">
           <aside>

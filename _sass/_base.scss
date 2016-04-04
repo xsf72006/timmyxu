@@ -139,7 +139,7 @@ code {
 }
 
 pre {
-    padding: 8px 10px;
+    padding: 8px 12px;
     overflow-x: scroll;
 
     > code {
@@ -177,6 +177,7 @@ pre {
 .page-main {
     float:left;
     margin-right: 250px;
+    max-width: 670px;
     @include media-query($on-palm) {
         float:none;
         margin-right:0;

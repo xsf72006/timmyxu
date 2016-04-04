@@ -32,22 +32,22 @@ Jekyll 的核心其实是一个文本转换引擎。它的概念其实就是：�
 一个基本的 Jekyll 网站的目录结构一般是像这样的：
 
 {% highlight html %}
-	.
-	├── _config.yml
-	├── _drafts
-	|	├──begin-with-the-crazy-ideas.textile
-	|	└──on-simplicity-in-technology.markdown
-	├──_includes
-	|	├── footer.html
-	|	└── header.html
-	├── _layouts
-	|	├── default.html
-	|	└── post.html
-	├── _posts
-	|	├── 2007-10-29-why-every-programmer-should-play-nethack.markdown
-	|	└── 2009-04-26-barcamp-boston-4-roundup.markdown
-	├── _site
-	└── index.html
+.
+├── _config.yml
+├── _drafts
+|	├──begin-with-the-crazy-ideas.textile
+|	└──on-simplicity-in-technology.markdown
+├──_includes
+|	├── footer.html
+|	└── header.html
+├── _layouts
+|	├── default.html
+|	└── post.html
+├── _posts
+|	├── 2007-10-29-why-every-programmer-should-play-nethack.markdown
+|	└── 2009-04-26-barcamp-boston-4-roundup.markdown
+├── _site
+└── index.html
 {% endhighlight %}
 
 1. _config.yml: 配置文件，例如站点 title，permalink 的格式等在这个文件中配置，在布局文件中可以用liquid语言进行调用。
@@ -99,10 +99,10 @@ Jekyll 的核心其实是一个文本转换引擎。它的概念其实就是：�
 正是 YAML 头信息开始让 Jekyll 变的很酷。任何只要包含 YAML 头信息的文件在 Jekyll 中都能被当做一个特殊的文件来处理。头信息必须在文件的开始部分，并且需要按照 YAML 的格式写在两行三虚线之间。下面是一个基本的例子：
 
 {% highlight html %}
-	---
-	layout: post
-	title: Blogging Like a Hacker
-	---
+---
+layout: post
+title: Blogging Like a Hacker
+---
 {% endhighlight %}
 
 在 YAML 头信息中，你可以使用已经定义好的全局变量，如 `layout`，`permalink` 等，也可以自定义变量，如 `title`，使其可以在样式模板中使用这个变量。调用自定义变量方法是 `{\{page.title}\}`，父属性是 **page**。
@@ -134,12 +134,12 @@ main.scss 文件主要设定了如 width，margin 等基本值，base.scss 文�
 Jekyll 提供了分类（category）和标签（tag）的全局变量，我们可以在自己文章的 YAML 头信息里加上相关信息，如下：
 
 {% highlight html %}
-	---
-	layout: post
-	title:  "基于Jekyll的静态博客生成初级指南"
-	categories: 技术杂谈
-	tags: jekyll
-	---
+---
+layout: post
+title:  "基于Jekyll的静态博客生成初级指南"
+categories: 技术杂谈
+tags: jekyll
+---
 {% endhighlight %}
 
 如果想在文章正文显示这些分类和标签，那么在文章的模板中（`_layout/post.html`）相应位置添加调用即可。

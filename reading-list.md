@@ -7,6 +7,24 @@ permalink: /reading-list/
 #### 2016
 
 <div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/变身.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/3865832/" target="_blank">变身</a>
+</div>
+
+<div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/宿命.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/3615061/" target="_blank">宿命</a>
+</div>
+
+<div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/魔球.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/25779594/" target="_blank">魔球</a>
+</div>
+
+<div class="book">
 	<img class="book-img" src="{{ site.url }}/assets/readings/月亮和六便士.jpg" width="180">
 	<hr>
 	<a href="https://book.douban.com/subject/26707295/" target="_blank">月亮和六便士</a>

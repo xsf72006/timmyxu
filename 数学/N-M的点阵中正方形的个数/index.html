@@ -6,14 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>标签：javascript</title>
-  <meta name="description" content="TimmyXu的个人博客，内容主要是IT技术，传统文化，个人日记。
-">
+  <title>N*M点阵中正方形的个数</title>
+  <meta name="description" content="简单问题">
 
   <meta property="wb:webmaster" content="e83db275b8962cc8" />
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://timmyxu.me/tags/javascript/">
+  <link rel="canonical" href="http://timmyxu.me/%E6%95%B0%E5%AD%A6/N-M%E7%9A%84%E7%82%B9%E9%98%B5%E4%B8%AD%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/">
   <link rel="alternate" type="application/rss+xml" title="菩提树下有只蝉" href="http://timmyxu.me/feed.xml" />
 </head>
 
@@ -141,17 +140,112 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="page-main">
-          <h3 class="category">标签：javascript</h3>
-<ul class="post-list">
-	
-	<li>
-    <span class="post-meta">2016年04月01日</span>
-    <h2>
-    	<a class="post-link" href="/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E8%87%AA%E5%AE%9A%E4%B9%89cocos2d-x-javascript%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%80%81%E6%A1%86%E7%B1%BB%E5%92%8CToast%E7%B1%BB/">自定义cocos2d-x引擎中的模态框类和消息通知类</a>
-    </h2>
-    </li>
-	
-</ul>
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">N*M点阵中正方形的个数</h1>
+    <p class="post-meta">
+    2017年03月07日
+    -
+    标签：
+    
+    <a href="/tags/algebraic/ " class="tag-item">algebraic</a>
+    
+    <a href="/tags/geometry/ " class="tag-item">geometry</a>
+    
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h3 id="section">简单问题</h3>
+
+<p><img src="/assets/square/square_img1.png" alt="Image1" width="150px" class="center-image" /></p>
+
+<p>首先看一个简单的问题。如图所示，这是一个大小为 <script type="math/tex">4*4</script> 的<strong>点阵</strong>，问该点阵中共有多少个正方形？</p>
+
+<p>很容易可以发现，只需统计边长为1的正方形个数 <script type="math/tex">(4-1)^2</script>，边长为2的正方形个数 <script type="math/tex">(4-2)^2</script>，和边长为3的正方形个数 <script type="math/tex">(4-3)^2</script>，共计14个正方形。（注意，<script type="math/tex">4*4</script> 的点阵边长为3）。 <script type="math/tex">N*N</script> 点阵的正方形总数即</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\sum_{s=1}^{N-1} s^2 &= \dfrac{N(N-1)(2N-1)}{6}
+\end{align} %]]></script>
+
+<hr />
+<p><br />
+<img src="/assets/square/square_img2.png" alt="Image2" height="150px" class="center-image" /></p>
+
+<p>扩展到 <script type="math/tex">N*M</script> 的点阵，如上图 <script type="math/tex">4*6</script> 的点阵，正方形边长只需统计到N和M中较小的那一边的边长即可。对于每个边长s，正方形个数为 <script type="math/tex">(N-s)*(M-s)</script> 。 <script type="math/tex">N*M</script> 点阵的正方形总数即（假设 <script type="math/tex">% <![CDATA[
+N<M %]]></script> ）</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\sum_{s=1}^{N-1} (M-s)*(N-s) &= \sum_{s=1}^{N-1} MN-(M+N)s+s^2 \\
+                             &= MN(N-1) - (M+N)\dfrac{(N-1)N}{2} + \dfrac{N(N-1)(2N-1)}{6} \\
+                             &= \dfrac{N(N-1)(3M-N-1)}{6}
+
+\end{align} %]]></script>
+
+<h3 id="section-1">扩展问题</h3>
+
+<p><img src="/assets/square/square_img3.png" alt="Image3" width="150px" class="center-image" /></p>
+
+<p>我们扩展一下正方形的定义。如图所示，这是一个大小为 <script type="math/tex">4*4</script> 的点阵，绿色和红色正方形都算作合法的正方形，问该点阵中共有多少个正方形？</p>
+
+<p>首先我们定义上图中绿色边的正方形为<strong>基准</strong>正方形。根据观察可以发现，一个边长为s的基准正方形点阵中共包含s个合法的正方形。因此对于每个边长s，<strong>基准正方形</strong>个数为 <script type="math/tex">(N-s)^2</script>（由简单问题得知），再乘以s，即为该边长s的所有正方形个数。 <script type="math/tex">N*N</script> 点阵的正方形总数即</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\sum_{s=1}^{N-1} s*(N-s)^2 &= \sum_{s=1}^{N-1} N^2s-2Ns^2+s^3 \\
+                           &= N^2\dfrac{N(N-1)}{2}-2N\dfrac{N(N-1)(2N-1)}{6}+\dfrac{(N-1)^2N^2}{4} \\
+                           &= \dfrac{N^4-N^2}{12}
+
+\end{align} %]]></script>
+
+<hr />
+<p><br />
+<img src="/assets/square/square_img4.png" alt="Image4" height="150px" class="center-image" /></p>
+
+<p>同样，扩展到 <script type="math/tex">N*M</script> 的点阵，对于每个边长s，正方形个数为 <script type="math/tex">(N-s)*(M-s)*s</script> 。 <script type="math/tex">N*M</script> 点阵的正方形总数即（假设 <script type="math/tex">% <![CDATA[
+N<M %]]></script> ）</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\sum_{s=1}^{N-1} s*(M-s)*(N-s) &= \sum_{s=1}^{N-1} MNs-(M+N)s^2+s^3 \\
+                               &= MN\dfrac{N(N-1)}{2} - (M+N)\dfrac{N(N-1)(2N-1)}{6} + \dfrac{(N-1)^2N^2}{4} \\
+                               &= \dfrac{(2M-N)(N-1)N(N+1)}{12}
+
+\end{align} %]]></script>
+
+<h3 id="section-2">参考资料</h3>
+
+<p>[1] <a href="https://code.google.com/codejam/contest/8284486/dashboard">Google Kickstart Round A 2017 Problem A.Square Counting</a></p>
+
+<p>[2] <a href="https://www.quora.com/How-many-squares-have-all-four-vertices-in-an-n-times-n-grid-of-dots">Quora</a></p>
+
+  </article>
+  <div>
+    <p class="post-meta">
+    本文分类：<a href="/categories/数学/ ">数学</a>
+    <p>
+  </div>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'xsf72006';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</div>
+
         </div>
         <div class="sidebar-category">
           <aside>

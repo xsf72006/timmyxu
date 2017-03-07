@@ -6,9 +6,89 @@
 </description>
     <link>http://timmyxu.me/</link>
     <atom:link href="http://timmyxu.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Mar 2017 22:16:20 +0800</pubDate>
-    <lastBuildDate>Mon, 06 Mar 2017 22:16:20 +0800</lastBuildDate>
+    <pubDate>Tue, 07 Mar 2017 20:45:44 +0800</pubDate>
+    <lastBuildDate>Tue, 07 Mar 2017 20:45:44 +0800</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>N*M点阵中正方形的个数</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;简单问题&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/square/square_img1.png&quot; alt=&quot;Image1&quot; width=&quot;150px&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;首先看一个简单的问题。如图所示，这是一个大小为 &lt;script type=&quot;math/tex&quot;&gt;4*4&lt;/script&gt; 的&lt;strong&gt;点阵&lt;/strong&gt;，问该点阵中共有多少个正方形？&lt;/p&gt;
+
+&lt;p&gt;很容易可以发现，只需统计边长为1的正方形个数 &lt;script type=&quot;math/tex&quot;&gt;(4-1)^2&lt;/script&gt;，边长为2的正方形个数 &lt;script type=&quot;math/tex&quot;&gt;(4-2)^2&lt;/script&gt;，和边长为3的正方形个数 &lt;script type=&quot;math/tex&quot;&gt;(4-3)^2&lt;/script&gt;，共计14个正方形。（注意，&lt;script type=&quot;math/tex&quot;&gt;4*4&lt;/script&gt; 的点阵边长为3）。 &lt;script type=&quot;math/tex&quot;&gt;N*N&lt;/script&gt; 点阵的正方形总数即&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\sum_{s=1}^{N-1} s^2 &amp;= \dfrac{N(N-1)(2N-1)}{6}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/square/square_img2.png&quot; alt=&quot;Image2&quot; height=&quot;150px&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;扩展到 &lt;script type=&quot;math/tex&quot;&gt;N*M&lt;/script&gt; 的点阵，如上图 &lt;script type=&quot;math/tex&quot;&gt;4*6&lt;/script&gt; 的点阵，正方形边长只需统计到N和M中较小的那一边的边长即可。对于每个边长s，正方形个数为 &lt;script type=&quot;math/tex&quot;&gt;(N-s)*(M-s)&lt;/script&gt; 。 &lt;script type=&quot;math/tex&quot;&gt;N*M&lt;/script&gt; 点阵的正方形总数即（假设 &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+N&lt;M %]]&gt;&lt;/script&gt; ）&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\sum_{s=1}^{N-1} (M-s)*(N-s) &amp;= \sum_{s=1}^{N-1} MN-(M+N)s+s^2 \\
+                             &amp;= MN(N-1) - (M+N)\dfrac{(N-1)N}{2} + \dfrac{N(N-1)(2N-1)}{6} \\
+                             &amp;= \dfrac{N(N-1)(3M-N-1)}{6}
+
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;扩展问题&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/square/square_img3.png&quot; alt=&quot;Image3&quot; width=&quot;150px&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们扩展一下正方形的定义。如图所示，这是一个大小为 &lt;script type=&quot;math/tex&quot;&gt;4*4&lt;/script&gt; 的点阵，绿色和红色正方形都算作合法的正方形，问该点阵中共有多少个正方形？&lt;/p&gt;
+
+&lt;p&gt;首先我们定义上图中绿色边的正方形为&lt;strong&gt;基准&lt;/strong&gt;正方形。根据观察可以发现，一个边长为s的基准正方形点阵中共包含s个合法的正方形。因此对于每个边长s，&lt;strong&gt;基准正方形&lt;/strong&gt;个数为 &lt;script type=&quot;math/tex&quot;&gt;(N-s)^2&lt;/script&gt;（由简单问题得知），再乘以s，即为该边长s的所有正方形个数。 &lt;script type=&quot;math/tex&quot;&gt;N*N&lt;/script&gt; 点阵的正方形总数即&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\sum_{s=1}^{N-1} s*(N-s)^2 &amp;= \sum_{s=1}^{N-1} N^2s-2Ns^2+s^3 \\
+                           &amp;= N^2\dfrac{N(N-1)}{2}-2N\dfrac{N(N-1)(2N-1)}{6}+\dfrac{(N-1)^2N^2}{4} \\
+                           &amp;= \dfrac{N^4-N^2}{12}
+
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/square/square_img4.png&quot; alt=&quot;Image4&quot; height=&quot;150px&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;同样，扩展到 &lt;script type=&quot;math/tex&quot;&gt;N*M&lt;/script&gt; 的点阵，对于每个边长s，正方形个数为 &lt;script type=&quot;math/tex&quot;&gt;(N-s)*(M-s)*s&lt;/script&gt; 。 &lt;script type=&quot;math/tex&quot;&gt;N*M&lt;/script&gt; 点阵的正方形总数即（假设 &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+N&lt;M %]]&gt;&lt;/script&gt; ）&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\sum_{s=1}^{N-1} s*(M-s)*(N-s) &amp;= \sum_{s=1}^{N-1} MNs-(M+N)s^2+s^3 \\
+                               &amp;= MN\dfrac{N(N-1)}{2} - (M+N)\dfrac{N(N-1)(2N-1)}{6} + \dfrac{(N-1)^2N^2}{4} \\
+                               &amp;= \dfrac{(2M-N)(N-1)N(N+1)}{12}
+
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;参考资料&lt;/h3&gt;
+
+&lt;p&gt;[1] &lt;a href=&quot;https://code.google.com/codejam/contest/8284486/dashboard&quot;&gt;Google Kickstart Round A 2017 Problem A.Square Counting&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[2] &lt;a href=&quot;https://www.quora.com/How-many-squares-have-all-four-vertices-in-an-n-times-n-grid-of-dots&quot;&gt;Quora&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Mar 2017 18:10:20 +0800</pubDate>
+        <link>http://timmyxu.me/%E6%95%B0%E5%AD%A6/N-M%E7%9A%84%E7%82%B9%E9%98%B5%E4%B8%AD%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
+        <guid isPermaLink="true">http://timmyxu.me/%E6%95%B0%E5%AD%A6/N-M%E7%9A%84%E7%82%B9%E9%98%B5%E4%B8%AD%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
+        
+        <category>algebraic</category>
+        
+        <category>geometry</category>
+        
+        
+        <category>数学</category>
+        
+      </item>
     
       <item>
         <title>自定义cocos2d-x引擎中的模态框类和消息通知类</title>

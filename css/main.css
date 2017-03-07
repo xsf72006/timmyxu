@@ -166,6 +166,10 @@ pre {
   .icon > svg path {
     fill: #828282; }
 
+.center-image {
+  margin: 0 auto;
+  display: block; }
+
 /**
  * Site header
  */

@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "N*M点阵中正方形的个数"
+date:   2017-03-07 18:10:20 +0800
+categories: 数学
+tags: algebraic geometry
+abstract: 给定一个N*M的点阵，求该点阵中包含的正方形的个数。
+comments: true
+---
+### 简单问题
+
+![Image1](/assets/square/square_img1.png){:width="150px" .center-image}
+
+首先看一个简单的问题。如图所示，这是一个大小为 $$ 4*4 $$ 的**点阵**，问该点阵中共有多少个正方形？
+
+很容易可以发现，只需统计边长为1的正方形个数 $$ (4-1)^2 $$，边长为2的正方形个数 $$ (4-2)^2 $$，和边长为3的正方形个数 $$ (4-3)^2 $$，共计14个正方形。（注意，$$ 4*4 $$ 的点阵边长为3）。 $$ N*N $$ 点阵的正方形总数即
+
+$$
+\begin{align}
+\sum_{s=1}^{N-1} s^2 &= \dfrac{N(N-1)(2N-1)}{6}
+\end{align}
+$$
+
+---
+<br>
+![Image2](/assets/square/square_img2.png){:height="150px" .center-image}
+
+扩展到 $$ N*M $$ 的点阵，如上图 $$ 4*6 $$ 的点阵，正方形边长只需统计到N和M中较小的那一边的边长即可。对于每个边长s，正方形个数为 $$ (N-s)*(M-s) $$ 。 $$ N*M $$ 点阵的正方形总数即（假设 $$ N<M $$ ）
+
+$$
+\begin{align}
+\sum_{s=1}^{N-1} (M-s)*(N-s) &= \sum_{s=1}^{N-1} MN-(M+N)s+s^2 \\
+                             &= MN(N-1) - (M+N)\dfrac{(N-1)N}{2} + \dfrac{N(N-1)(2N-1)}{6} \\
+                             &= \dfrac{N(N-1)(3M-N-1)}{6}
+
+\end{align}
+$$
+
+### 扩展问题
+
+![Image3](/assets/square/square_img3.png){:width="150px" .center-image}
+
+我们扩展一下正方形的定义。如图所示，这是一个大小为 $$ 4*4 $$ 的点阵，绿色和红色正方形都算作合法的正方形，问该点阵中共有多少个正方形？
+
+首先我们定义上图中绿色边的正方形为**基准**正方形。根据观察可以发现，一个边长为s的基准正方形点阵中共包含s个合法的正方形。因此对于每个边长s，**基准正方形**个数为 $$ (N-s)^2 $$（由简单问题得知），再乘以s，即为该边长s的所有正方形个数。 $$ N*N $$ 点阵的正方形总数即
+
+$$
+\begin{align}
+\sum_{s=1}^{N-1} s*(N-s)^2 &= \sum_{s=1}^{N-1} N^2s-2Ns^2+s^3 \\
+                           &= N^2\dfrac{N(N-1)}{2}-2N\dfrac{N(N-1)(2N-1)}{6}+\dfrac{(N-1)^2N^2}{4} \\
+                           &= \dfrac{N^4-N^2}{12}
+
+\end{align}
+$$
+
+---
+<br>
+![Image4](/assets/square/square_img4.png){:height="150px" .center-image}
+
+同样，扩展到 $$ N*M $$ 的点阵，对于每个边长s，正方形个数为 $$ (N-s)*(M-s)*s $$ 。 $$ N*M $$ 点阵的正方形总数即（假设 $$ N<M $$ ）
+
+$$
+\begin{align}
+\sum_{s=1}^{N-1} s*(M-s)*(N-s) &= \sum_{s=1}^{N-1} MNs-(M+N)s^2+s^3 \\
+                               &= MN\dfrac{N(N-1)}{2} - (M+N)\dfrac{N(N-1)(2N-1)}{6} + \dfrac{(N-1)^2N^2}{4} \\
+                               &= \dfrac{(2M-N)(N-1)N(N+1)}{12}
+
+\end{align}
+$$
+
+
+### 参考资料
+
+[1] [Google Kickstart Round A 2017 Problem A.Square Counting](https://code.google.com/codejam/contest/8284486/dashboard)
+
+[2] [Quora](https://www.quora.com/How-many-squares-have-all-four-vertices-in-an-n-times-n-grid-of-dots)

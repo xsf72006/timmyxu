@@ -4,6 +4,32 @@ title: 阅读清单
 permalink: /reading-list/
 ---
 
+#### 2017
+
+<div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/道林·格雷的画像.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/25902239/" target="_blank">道林·格雷的画像</a>
+</div>
+
+<div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/莫奈和他的眼睛.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/25811785/" target="_blank">莫奈和他的眼睛</a>
+</div>
+
+<div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/生命的热情何在.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/26714710/" target="_blank">生命的热情何在</a>
+</div>
+
+<div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/伦勃朗1642.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/25904562/" target="_blank">伦勃朗1642</a>
+</div>
+
 #### 2016
 
 <div class="book">

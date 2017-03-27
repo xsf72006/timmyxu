@@ -7,6 +7,12 @@ permalink: /reading-list/
 #### 2017
 
 <div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/傲慢与偏见.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/1455812/" target="_blank">Pride and Prejudice</a>
+</div>
+
+<div class="book">
 	<img class="book-img" src="{{ site.url }}/assets/readings/道林·格雷的画像.jpg" width="180">
 	<hr>
 	<a href="https://book.douban.com/subject/25902239/" target="_blank">道林·格雷的画像</a>

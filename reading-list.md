@@ -7,6 +7,18 @@ permalink: /reading-list/
 #### 2017
 
 <div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/了不起的盖茨比.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/22025032/" target="_blank">了不起的盖茨比</a>
+</div>
+
+<div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/鲁宾逊漂流记.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/1087036/" target="_blank">鲁宾逊漂流记</a>
+</div>
+
+<div class="book">
 	<img class="book-img" src="{{ site.url }}/assets/readings/傲慢与偏见.jpg" width="180">
 	<hr>
 	<a href="https://book.douban.com/subject/1455812/" target="_blank">Pride and Prejudice</a>

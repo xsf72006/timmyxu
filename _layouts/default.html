@@ -34,7 +34,7 @@
             <ul class="category-list">
               <h3>标签</h3>
               {% for tag in site.tags %}
-              <a href="/tags/{{tag|first}}/ {{| prepend: site.baseurl}}" class="tag-item" title="{{ tag|last|size }}篇文章">{{ tag|first }}</a>
+              <a href="/tags/{{tag|first}}/" class="tag-item" title="{{ tag|last|size }}篇文章">{{ tag|first }}</a>
               {% endfor %}
             </ul>
           </aside>

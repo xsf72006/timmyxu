@@ -9,8 +9,8 @@ layout: default
     {{ page.date | date: "%Y年%m月%d日" }}
     -
     标签：
-    {% for tag in {{page.tags}} %}
-    <a href="/tags/{{tag}}/ {{| prepend: site.baseurl}}" class="tag-item">{{ tag }}</a>
+    {% for tag in page.tags %}
+    <a href="/tags/{{tag}}/" class="tag-item">{{ tag }}</a>
     {% endfor %}
     </p>
   </header>
@@ -20,7 +20,7 @@ layout: default
   </article>
   <div>
     <p class="post-meta">
-    本文分类：<a href="/categories/{{page.categories}}/ {{| prepend: site.baseurl}}">{{page.categories}}</a>
+    本文分类：<a href="/categories/{{page.categories}}/">{{page.categories}}</a>
     <p>
   </div>
   {% if page.comments %}

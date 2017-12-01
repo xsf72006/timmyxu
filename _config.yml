@@ -11,6 +11,7 @@ timezone: 'Asia/Shanghai'
 permalink: /:categories/:title/
 
 # Build settings
+JEKYLL_ENV: production
 markdown: kramdown
 
 # Categories settings

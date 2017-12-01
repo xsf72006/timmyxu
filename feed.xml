@@ -4,10 +4,10 @@
     <title>菩提树下有只蝉</title>
     <description>TimmyXu的个人博客，内容主要是IT技术，传统文化，个人日记。
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Dec 2017 20:24:08 +0800</pubDate>
-    <lastBuildDate>Fri, 01 Dec 2017 20:24:08 +0800</lastBuildDate>
+    <link>http://shaofe.ng/</link>
+    <atom:link href="http://shaofe.ng/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 01 Dec 2017 20:42:39 +0800</pubDate>
+    <lastBuildDate>Fri, 01 Dec 2017 20:42:39 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -78,8 +78,8 @@ N&lt;M %]]&gt;&lt;/script&gt; ）&lt;/p&gt;
 &lt;p&gt;[2] &lt;a href=&quot;https://www.quora.com/How-many-squares-have-all-four-vertices-in-an-n-times-n-grid-of-dots&quot;&gt;Quora&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 07 Mar 2017 18:10:20 +0800</pubDate>
-        <link>http://localhost:4000/%E6%95%B0%E5%AD%A6/N-M%E7%9A%84%E7%82%B9%E9%98%B5%E4%B8%AD%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E6%95%B0%E5%AD%A6/N-M%E7%9A%84%E7%82%B9%E9%98%B5%E4%B8%AD%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
+        <link>http://shaofe.ng/%E6%95%B0%E5%AD%A6/N-M%E7%9A%84%E7%82%B9%E9%98%B5%E4%B8%AD%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
+        <guid isPermaLink="true">http://shaofe.ng/%E6%95%B0%E5%AD%A6/N-M%E7%9A%84%E7%82%B9%E9%98%B5%E4%B8%AD%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
         
         <category>algebraic</category>
         
@@ -264,8 +264,8 @@ N&lt;M %]]&gt;&lt;/script&gt; ）&lt;/p&gt;
 &lt;p&gt;我的代码还有很多瑕疵，有些地方处理得不严谨，仅供大家作个参考，希望懂cocos2dx的大神能够提出一些批评。欢迎大家在评论里交流学习。&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Apr 2016 09:45:22 +0800</pubDate>
-        <link>http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E8%87%AA%E5%AE%9A%E4%B9%89cocos2d-x-javascript%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%80%81%E6%A1%86%E7%B1%BB%E5%92%8CToast%E7%B1%BB/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E8%87%AA%E5%AE%9A%E4%B9%89cocos2d-x-javascript%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%80%81%E6%A1%86%E7%B1%BB%E5%92%8CToast%E7%B1%BB/</guid>
+        <link>http://shaofe.ng/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E8%87%AA%E5%AE%9A%E4%B9%89cocos2d-x-javascript%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%80%81%E6%A1%86%E7%B1%BB%E5%92%8CToast%E7%B1%BB/</link>
+        <guid isPermaLink="true">http://shaofe.ng/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E8%87%AA%E5%AE%9A%E4%B9%89cocos2d-x-javascript%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%80%81%E6%A1%86%E7%B1%BB%E5%92%8CToast%E7%B1%BB/</guid>
         
         <category>cocos2d-x</category>
         
@@ -362,8 +362,8 @@ y_i &amp;= (Y_i - \bar{Y})
 &lt;p&gt;文中若有疏漏之处，敬请在评论中指正。如果大神有更好的思路，也请在评论区交流，谢谢。&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Mar 2016 23:29:30 +0800</pubDate>
-        <link>http://localhost:4000/%E6%95%B0%E5%AD%A6/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E6%95%B0%E5%AD%A6/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/</guid>
+        <link>http://shaofe.ng/%E6%95%B0%E5%AD%A6/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://shaofe.ng/%E6%95%B0%E5%AD%A6/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/</guid>
         
         <category>计量经济学</category>
         
@@ -423,8 +423,8 @@ y_i &amp;= (Y_i - \bar{Y})
 &lt;p&gt;张良一生进退自如，谱写了富有传奇色彩的人生篇章。&lt;/p&gt;
 </description>
         <pubDate>Sun, 06 Mar 2016 17:05:24 +0800</pubDate>
-        <link>http://localhost:4000/%E8%AF%BB%E5%8F%B2%E6%98%8E%E6%99%BA/%E6%95%A2%E5%BF%8D%E6%8A%A2%E5%85%88%E6%88%90%E7%8E%8B%E5%B8%88/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E8%AF%BB%E5%8F%B2%E6%98%8E%E6%99%BA/%E6%95%A2%E5%BF%8D%E6%8A%A2%E5%85%88%E6%88%90%E7%8E%8B%E5%B8%88/</guid>
+        <link>http://shaofe.ng/%E8%AF%BB%E5%8F%B2%E6%98%8E%E6%99%BA/%E6%95%A2%E5%BF%8D%E6%8A%A2%E5%85%88%E6%88%90%E7%8E%8B%E5%B8%88/</link>
+        <guid isPermaLink="true">http://shaofe.ng/%E8%AF%BB%E5%8F%B2%E6%98%8E%E6%99%BA/%E6%95%A2%E5%BF%8D%E6%8A%A2%E5%85%88%E6%88%90%E7%8E%8B%E5%B8%88/</guid>
         
         <category>史记</category>
         
@@ -448,8 +448,8 @@ y_i &amp;= (Y_i - \bar{Y})
 &lt;p&gt;拭目以待！&lt;/p&gt;
 </description>
         <pubDate>Sun, 13 Dec 2015 14:32:33 +0800</pubDate>
-        <link>http://localhost:4000/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E6%89%98%E7%AE%A1%E5%95%86%E5%B0%8F%E8%AE%B0/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E6%89%98%E7%AE%A1%E5%95%86%E5%B0%8F%E8%AE%B0/</guid>
+        <link>http://shaofe.ng/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E6%89%98%E7%AE%A1%E5%95%86%E5%B0%8F%E8%AE%B0/</link>
+        <guid isPermaLink="true">http://shaofe.ng/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E6%89%98%E7%AE%A1%E5%95%86%E5%B0%8F%E8%AE%B0/</guid>
         
         <category>jekyll</category>
         
@@ -499,8 +499,8 @@ The most important thing to do is my graduation project. After a four-year study
 &lt;p&gt;Keep going!&lt;/p&gt;
 </description>
         <pubDate>Sun, 26 Apr 2015 17:02:48 +0800</pubDate>
-        <link>http://localhost:4000/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/Progress-Report/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/Progress-Report/</guid>
+        <link>http://shaofe.ng/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/Progress-Report/</link>
+        <guid isPermaLink="true">http://shaofe.ng/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/Progress-Report/</guid>
         
         <category>english</category>
         
@@ -700,8 +700,8 @@ tags: jekyll
 
 </description>
         <pubDate>Tue, 14 Apr 2015 21:41:03 +0800</pubDate>
-        <link>http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E5%9F%BA%E4%BA%8EJekyll%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%88%9D%E7%BA%A7%E6%8C%87%E5%8D%97/</link>
-        <guid isPermaLink="true">http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E5%9F%BA%E4%BA%8EJekyll%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%88%9D%E7%BA%A7%E6%8C%87%E5%8D%97/</guid>
+        <link>http://shaofe.ng/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E5%9F%BA%E4%BA%8EJekyll%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%88%9D%E7%BA%A7%E6%8C%87%E5%8D%97/</link>
+        <guid isPermaLink="true">http://shaofe.ng/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/%E5%9F%BA%E4%BA%8EJekyll%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%88%9D%E7%BA%A7%E6%8C%87%E5%8D%97/</guid>
         
         <category>jekyll</category>
         

@@ -4,6 +4,14 @@ title: 阅读清单
 permalink: /reading-list/
 ---
 
+#### 2018
+<div class="book">
+	<img class="book-img" src="{{ site.url }}/assets/readings/音乐使人自由.jpg" width="180">
+	<hr>
+	<a href="https://book.douban.com/subject/24272636/" target="_blank">音乐使人自由</a>
+</div>
+
+
 #### 2017
 
 <div class="book">
